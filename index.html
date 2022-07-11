@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+	<div class="wrapper">
+		<a href="index.html" class="btn__reset">Почати спочатку</a>
+		<input type="button" id="author__info" value="Що робити?">
+		<div class="about__me">
+			<h1 class="name">Побудова геометричних фігур на екрані.</h1>
+			<h3 class="contacts">Виберіть три довільні точки в клієнтській області браузера. Коли вони вибрані, натисніть
+				лівою клавішою миші в
+				довільній області сторінки. <br><br>
+				Ви можете перетягнути одну з вершин заданих вами. Для початку переміщення виберіть назву вершини лівою
+				клавішою миші
+				й перетягніть в потрібне для вас місце, відпустіть ліву клавішу миші. Натисніть в довільній області
+				браузера й фігури будуть перебудовані.
+				<br>
+			</h3>
+			<p class="some__text">На основі цих трьох точок буде побудовано дві фігури:
+				<br>- синій паралелограм, з трьома вершинами в обраних точках.
+				<br>- жовте коло, з такою ж площею та центром маси, які має паралелограм.
+				<br>
+				Ці фігури не будуть заповнені.
+
+			</p>
+			<div class="about__me__close">x</div>
+		</div>
+		<div class="play__space"></div>
+		<canvas id="canvas" class="play__space" onmousedown="showCoords(event)"></canvas>
+	</div>
+
+	<script src="main.js"></script>
+</body>
+
+</html>
