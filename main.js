@@ -94,7 +94,7 @@ function calc(i) {
 		dotsX.push(parseInt(allDots[j].style.left.replace(/[px]/, '')))
 		dotsY.push(parseInt(allDots[j].style.top.replace(/[px]/, '')))
 		startDotsCoord.push(dotsX[j], dotsY[j]);
-		draw(dotsX[j], dotsY[j], 11, 0, 'red');
+		draw(dotsX[j], dotsY[j], 5.5, 0, 'red');
 	}
 
 	// display result 
@@ -202,7 +202,7 @@ function calc(i) {
 	resultRow[2].innerText = `${fourthPointY}px`;
 
 
-	draw(fourthPointX, fourthPointY, 11, 0, 'red'); // drawing fourth point
+	draw(fourthPointX, fourthPointY, 5.5, 0, 'red'); // drawing fourth point
 	drawing(finishDotsCoord, fourthPointX, fourthPointY, 'blue'); // drawing rectangle
 
 	let legA = Math.sqrt(Math.pow(finishDotsCoord[0] - finishDotsCoord[4], 2) + Math.pow(finishDotsCoord[1] - finishDotsCoord[5], 2))
@@ -224,7 +224,7 @@ function showCoords(evt) {
 		newPoint[i].setAttribute('id', `newPoint${i}`);
 		newPoint[i].style.left = `${evt.clientX}px`;
 		newPoint[i].style.top = `${evt.clientY}px`;
-		draw(evt.clientX, evt.clientY, 11, 0, 'red');
+		draw(evt.clientX, evt.clientY, 5.5, 0, 'red');
 		switch (i) {
 			case 0: newPoint[i].innerText = 'A';
 				break;
