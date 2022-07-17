@@ -206,6 +206,19 @@ function calc(i) {
 	let square = legA * legB;
 	let radius = Math.sqrt(square / Math.PI)
 	draw(massCenterX, massCenterY, radius, 'Yellow')
+
+	resultColumn[5] = document.createElement('tr');
+	resultTable.append(resultColumn[5]);
+	resultRow[0] = document.createElement('th');
+	resultColumn[5].append(resultRow[0])
+	resultRow[0].innerText = 'S of circle';
+	resultRow[1] = document.createElement('th');
+	resultColumn[5].append(resultRow[1])
+	resultRow[1].innerText = `${(square / 1000).toFixed(2)}`;
+	resultRow[2] = document.createElement('th');
+	resultColumn[5].append(resultRow[2])
+	resultRow[2].innerText = `тис. px²`;
+
 }
 
 // ------------------------------------------------- // 
