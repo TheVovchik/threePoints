@@ -26,8 +26,6 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
-
-
 // making points 
 function draw(x, y, radius, strokStyle) {
 	if (canvas.getContext) {
@@ -39,7 +37,6 @@ function draw(x, y, radius, strokStyle) {
 		ctx.strokeStyle = strokStyle;
 		ctx.fillStyle = strokStyle;
 		ctx.stroke();
-
 	}
 }
 // ---------------------------------- //
@@ -96,12 +93,15 @@ function calc(i) {
 	// display result 
 
 	const resultTable = document.createElement('table');
-	resultTable.setAttribute('id', `demo`);
 	let resultColumn = [];
-
 	let resultRow = [];
 
-	playSpace.append(resultTable);
+	const resultContainer = document.createElement('div');
+	resultContainer.setAttribute('class', 'result__container');
+	resultContainer.setAttribute('id', `demo`);
+	playSpace.append(resultContainer);
+
+	resultContainer.append(resultTable);
 
 
 	for (let k = 0; k < 4; k++) {
@@ -222,6 +222,11 @@ function calc(i) {
 }
 
 // ------------------------------------------------- // 
+const closeOpen = document.createElement('div');
+closeOpen.setAttribute('class', 'close__open');
+closeOpen.setAttribute('id', `open__close`);
+playSpace.append(closeOpen);
+closeOpen.innerHTML = '>';
 
 let i = 0;
 // getting 3 point 
@@ -256,12 +261,26 @@ function showCoords(evt) {
 			element.remove();
 		}
 		calc(i);
+
+
+
+		const demo = document.getElementById('demo');
+
+		closeOpen.addEventListener("click", function (event) {
+			event.preventDefault();
+			demo.style.display = 'none';
+			closeOpen.style.transform = 'none'
+			closeOpen.addEventListener("click", function () {
+				demo.style.display = 'block';
+				closeOpen.style.transform = 'rotate(90deg)'
+			});
+		});
 	}
 }
 
 document.addEventListener('mousedown', e => {
 	var ball = document.getElementById(`${e.target.id}`);
-	if (e.target.id !== 'canvas') {
+	if (e.target.id !== 'canvas' && e.target.id !== 'open__close') {
 
 
 		ball.onmousedown = function (e) {
@@ -302,3 +321,5 @@ document.addEventListener('mousedown', e => {
 		}
 	}
 })
+
+
