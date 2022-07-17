@@ -26,10 +26,10 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
-let i = 0;
+
 
 // making points 
-function draw(x, y, radius, z, strokStyle) {
+function draw(x, y, radius, strokStyle) {
 	if (canvas.getContext) {
 		ctx.beginPath();
 		let startAngle = 0;
@@ -38,12 +38,8 @@ function draw(x, y, radius, z, strokStyle) {
 		ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise);
 		ctx.strokeStyle = strokStyle;
 		ctx.fillStyle = strokStyle;
-		if (z === 0) {
-			ctx.fill();
-		}
-		else if (z === 1) {
-			ctx.stroke();
-		}
+		ctx.stroke();
+
 	}
 }
 // ---------------------------------- //
@@ -94,7 +90,7 @@ function calc(i) {
 		dotsX.push(parseInt(allDots[j].style.left.replace(/[px]/, '')))
 		dotsY.push(parseInt(allDots[j].style.top.replace(/[px]/, '')))
 		startDotsCoord.push(dotsX[j], dotsY[j]);
-		draw(dotsX[j], dotsY[j], 5.5, 0, 'red');
+		draw(dotsX[j], dotsY[j], 5.5, 'red');
 	}
 
 	// display result 
@@ -202,19 +198,19 @@ function calc(i) {
 	resultRow[2].innerText = `${fourthPointY}px`;
 
 
-	draw(fourthPointX, fourthPointY, 5.5, 0, 'red'); // drawing fourth point
+	draw(fourthPointX, fourthPointY, 5.5, 'red'); // drawing fourth point
 	drawing(finishDotsCoord, fourthPointX, fourthPointY, 'blue'); // drawing rectangle
 
 	let legA = Math.sqrt(Math.pow(finishDotsCoord[0] - finishDotsCoord[4], 2) + Math.pow(finishDotsCoord[1] - finishDotsCoord[5], 2))
 	let legB = Math.sqrt(Math.pow(finishDotsCoord[2] - finishDotsCoord[4], 2) + Math.pow(finishDotsCoord[3] - finishDotsCoord[5], 2))
 	let square = legA * legB;
 	let radius = Math.sqrt(square / Math.PI)
-	draw(massCenterX, massCenterY, radius, 1, 'Yellow')
+	draw(massCenterX, massCenterY, radius, 'Yellow')
 }
 
 // ------------------------------------------------- // 
 
-
+let i = 0;
 // getting 3 point 
 function showCoords(evt) {
 	if ((evt.clientX > 400 || evt.clientY > 65) && i !== 3) {
@@ -224,7 +220,7 @@ function showCoords(evt) {
 		newPoint[i].setAttribute('id', `newPoint${i}`);
 		newPoint[i].style.left = `${evt.clientX}px`;
 		newPoint[i].style.top = `${evt.clientY}px`;
-		draw(evt.clientX, evt.clientY, 5.5, 0, 'red');
+		draw(evt.clientX, evt.clientY, 5.5, 'red');
 		switch (i) {
 			case 0: newPoint[i].innerText = 'A';
 				break;
@@ -234,64 +230,62 @@ function showCoords(evt) {
 		}
 		i++;
 	}
-
-	else if (i === 3) {
-		const element = document.getElementById("demo");
+	if (i === 3) {
+		ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+		let element = document.getElementById("demo");
 		if (element !== null) {
 			element.remove();
-
 		}
-
-		document.addEventListener('mousedown', e => {
-			var ball = document.getElementById(`${e.target.id}`);
-			if (e.target.id !== 'canvas') {
-
-
-				ball.onmousedown = function (e) {
-					var coords = getCoords(ball);
-					var shiftX = e.pageX - coords.left;
-					var shiftY = e.pageY - coords.top;
-					console.log(coords)
-					moveAt(e);
-
-					function moveAt(e) {
-						ball.style.left = e.pageX - shiftX + 'px';
-						ball.style.top = e.pageY - shiftY + 'px';
-					}
-
-					document.onmousemove = function (e) {
-						moveAt(e);
-					};
-
-					ball.onmouseup = function () {
-						document.onmousemove = null;
-						ball.onmouseup = null;
-					};
-
-				}
-
-				ball.ondragstart = function () {
-					return false;
-				};
-
-				function getCoords(elem) {
-					var box = elem.getBoundingClientRect();
-					return {
-						top: box.top + window.pageYOffset,
-						left: box.left + window.pageXOffset
-					};
-				}
-			}
-
-		})
+		calc(i);
+		element = document.getElementById("demo");
 		ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
-		calc(i)
+		if (element !== null) {
+			element.remove();
+		}
+		calc(i);
 	}
 }
 
+document.addEventListener('mousedown', e => {
+	var ball = document.getElementById(`${e.target.id}`);
+	if (e.target.id !== 'canvas') {
 
 
+		ball.onmousedown = function (e) {
+			var coords = getCoords(ball);
+			var shiftX = e.pageX - coords.left;
+			var shiftY = e.pageY - coords.top;
+			console.log(coords)
+			moveAt(e);
 
+			function moveAt(e) {
+				ball.style.left = e.pageX - shiftX + 'px';
+				ball.style.top = e.pageY - shiftY + 'px';
+			}
 
+			document.onmousemove = function (e) {
+				moveAt(e);
+				showCoords(e);
+			};
 
+			ball.onmouseup = function () {
+				document.onmousemove = null;
+				ball.onmouseup = null;
 
+			};
+
+		}
+
+		ball.ondragstart = function () {
+			return false;
+		};
+
+		function getCoords(elem) {
+			var box = elem.getBoundingClientRect();
+			return {
+				top: box.top + window.pageYOffset,
+				left: box.left + window.pageXOffset
+			};
+		}
+	}
+})
