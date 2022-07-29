@@ -21,8 +21,10 @@ const playSpace = document.querySelector('.play__space');
 for (let i = 0; i <= 3; i++) {
 	newPoint[i] = document.createElement('div')
 }
-let canvas = document.getElementById('canvas');
-let ctx = canvas.getContext('2d');
+const canvas = document.getElementById('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const ctx = canvas.getContext('2d');
 
 // making points 
 function draw(x, y, radius, strokStyle) {
