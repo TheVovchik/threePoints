@@ -22,8 +22,6 @@ for (let i = 0; i <= 3; i++) {
 	newPoint[i] = document.createElement('div')
 }
 let canvas = document.getElementById('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
 let ctx = canvas.getContext('2d');
 
 // making points 
