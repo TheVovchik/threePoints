@@ -1,0 +1,111 @@
+[33mcommit 86ed8090feb0d35b0f02a4d3039051c293b1ecb6[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m)[m
+Author: Volodymyr Nosachenko <vovanosachenko@meta.ua>
+Date:   Sun Jul 31 13:26:47 2022 +0300
+
+    index2.html was created
+
+[33mcommit ace2c7faa50657da19e7511fac1e4d6ab59c51f0[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:56:54 2022 +0300
+
+    canvas
+
+[33mcommit 372861900b8af2f9a7d0ae311f8f1cc063711f04[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:44:33 2022 +0300
+
+    return event
+
+[33mcommit 963c8031a41c0dc176b71a47ad10a5ad94d02d4d[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:38:00 2022 +0300
+
+    onmousedown return
+
+[33mcommit ce531894c885c0499da9a23dfd6bd9a676c48ea1[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:35:46 2022 +0300
+
+    wrapper
+
+[33mcommit 330d2fce9005ed584eb6f19f1d22169c46dfd8f6[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:34:04 2022 +0300
+
+    clear canvas
+
+[33mcommit dee391b9d5a1b714b7a2a7fdba80bedbec4d5f2e[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:29:21 2022 +0300
+
+    without onmousedown canvas
+
+[33mcommit da72ab444524c9031ae93b8e042a8725b0a854d6[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:28:21 2022 +0300
+
+    dimensions
+
+[33mcommit ca3e4a311337092d30086b1e3ae4321a135a0f82[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:22:04 2022 +0300
+
+    overflow
+
+[33mcommit ec2de674d0dfb4fa9823893738ab597877d956f2[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:18:50 2022 +0300
+
+    ++ padding
+
+[33mcommit bec75222d1b93880d05f0596ae74f50c91fc3e3f[m
+Author: Volodymyr Nosachenko <105124305+TheVovchik@users.noreply.github.com>
+Date:   Fri Jul 29 11:17:05 2022 +0300
+
+    Update points
+
+[33mcommit 4ca069576e711cb4c4a0f5c19cf16ea459c3f527[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Sun Jul 17 13:22:31 2022 +0300
+
+    Add files via upload
+    
+    правки
+
+[33mcommit 9ab0be951a69be133a99703fe442c9a6845fce8f[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Sun Jul 17 12:29:52 2022 +0300
+
+    Add files via upload
+    
+    площа кола рх2
+
+[33mcommit 5e0c87c46dc4f5f5415a3ab5a333ff57bc2e8a79[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Sun Jul 17 12:07:45 2022 +0300
+
+    Add files via upload
+
+[33mcommit 3f7fac8ee6f4d62a40edd392f76c9ca44ff59f90[m[33m ([m[1;33mtag: v.1.0.1[m[33m)[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Mon Jul 11 15:00:59 2022 +0300
+
+    Update main.js
+
+[33mcommit 3e6079f08d5e69a4cce4ad0f4461bfb876ac30a4[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Mon Jul 11 13:57:09 2022 +0300
+
+    Add files via upload
+
+[33mcommit 6164b2890552e3ae6d38e97dde777391b8e23759[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Mon Jul 11 13:52:00 2022 +0300
+
+    Update README.md
+
+[33mcommit 18ab5edd24cb32ad57d3d5d7661bde5c9a1f4d80[m
+Author: TheVovchik <105124305+TheVovchik@users.noreply.github.com>
+Date:   Mon Jul 11 13:44:08 2022 +0300
+
+    Initial commit
